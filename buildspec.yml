@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+  pre_build:
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Building the app...
+      - npm run build
+      - echo Build completed
+artifacts:
+  files:
+    - '**/*'
+  base-directory: dist
+  name: lawyer-website
